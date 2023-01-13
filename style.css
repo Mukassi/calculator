@@ -7,7 +7,7 @@
   body {
     padding: 0;
     margin: 0;
-    background: linear-gradient(to right, #00AAFF, #00FF6C);
+    background: linear-gradient(to right, #8a572e, #b39d89);
   }
   
   .calculator {
@@ -15,8 +15,8 @@
     justify-content: center;
     align-content: center;
     min-height: 100vh;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(6, 100px);
   }
   
   .calculator > button {
@@ -46,9 +46,14 @@
   .output #history {
     color: rgba(255, 255, 255, .75);
     font-size: 1.5rem;
+    min-height: 30px;
   }
   
   .output #result {
     color: white;
     font-size: 2.5rem;
+  }
+
+  .main {
+    color: rgb(224, 139, 27);
   }
