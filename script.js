@@ -113,7 +113,7 @@ class Calculator {
     }
     else {
         this.clearAllHistory();
-        this.addNewInput('Нельзя извлечь логарифм из числа меньше 0','error');
+        this.addNewInput('Нельзя извлечь логарифм из числа меньше или равного 0','error');
         this.addNewInput('=', 'equals');
     }
   } 
@@ -240,7 +240,7 @@ class Calculator {
       case '/' :
         if(rightOperand === 0) {
           this.clearAllHistory();
-          this.addNewInput('На ноль делить нельзя','error');
+          this.addNewInput('На ноль делить нельзя.','error');
         }
         return leftOperand / rightOperand;
       case '-' :
@@ -350,6 +350,7 @@ decimalButton.addEventListener('click', button => {
 })
 
 window.addEventListener('keydown', (event) => {
+  event.preventDefault();
   let {key} = event;
   if(Number(key) || key === '0') {
     calculator.insertNumber(key);
@@ -370,11 +371,11 @@ window.addEventListener('keydown', (event) => {
     case '%':
       calculator.changePercentToDecinal();
       break; 
-    case '=':
-      calculator.generateResult();
-      break;
     case 'Enter':
       calculator.generateResult();
-      break;      
-  }
+      break;   
+    case '=':
+      calculator.generateResult();
+      break;     
+}
 })
